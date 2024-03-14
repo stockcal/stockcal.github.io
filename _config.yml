@@ -9,15 +9,11 @@ exclude:
   - "/vendor/"
 
 # Site settings
-title: 주식초보홍대리 심플 블로그
-subtitle: "A simple yet classy theme for your Jekyll website or blog"
+title: 주식초보홍대리 블로그
+subtitle: "주절주절 블라블라"
 email: stocknovicehong@gmail.com
 name: 주식초보홍대리
-description: >
-  A simple yet classy theme for your Jekyll website or blog.
-# Base URL of site (i.e. /blog). It should always start with a slash,
-# and never end with a slash. Set it to a blank value if hosting at the
-# root of your server.
+description: 주절주절 블라블라
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 cover: "/assets/header_image.jpg"
