@@ -15,7 +15,30 @@ pagination:
 </div>
 
 <div class="wrapper">
-<ul class="post-list">
+
+{% for category in site.categories %}
+  {% capture cat %}{{ category | first }}{% endcapture %}
+  <h2 id="{{cat}}">{{ cat | capitalize }}</h2>
+  {% for desc in site.descriptions %}
+    {% if desc.cat == cat %}
+      <p class="desc"><em>{{ desc.desc }}</em></p>
+    {% endif %}
+  {% endfor %}
+  <ul class="posts-list">
+  {% for post in site.categories[cat] %}
+    <li>
+      <strong>
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </strong>
+      <span class="post-date">- {{ post.date | date_to_long_string }}</span>
+    </li>
+  {% endfor %}
+  </ul>
+  {% if forloop.last == false %}<hr>{% endif %}
+{% endfor %}
+
+
+<!--ul class="post-list">
   {% for post in paginator.posts %}
   <li>
     <h2>
@@ -41,9 +64,9 @@ pagination:
   <hr>
   {% endif %}
   {% endfor %}
-</ul>
+</ul-->
 
-<nav class="pagination" role="navigation">
+<!--nav class="pagination" role="navigation">
 	<p>
     {% if paginator.previous_page %}
 			{% if paginator.page == 2 %}
@@ -82,7 +105,7 @@ pagination:
     </span>
 		{% endif %}
 	</p>
-</nav>
+</nav-->
 
 </div>
 </div>

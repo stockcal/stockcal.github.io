@@ -5,4 +5,6 @@ gem 'jekyll-sitemap'
 gem 'jekyll-paginate'
 gem 'kramdown-parser-gfm'
 
+#gem "webrick", "~> 1.8"
+
 gem "webrick", "~> 1.8"
