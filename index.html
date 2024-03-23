@@ -1,111 +1,28 @@
----
-layout: default
-pagination: 
-  enabled: true
----
-<div class="home">
-
-<div class="site-header-container {% if site.cover %}has-cover{% endif %}" {% if site.cover %}style="background-image: url({{ site.cover | prepend: site.baseurl }});"{% endif %}>
-  <div class="scrim {% if site.cover %}has-cover{% endif %}">
-    <header class="site-header">
-      <h1 class="title">{{ site.title }}</h1>
-      {% if site.subtitle %}<p class="subtitle">{{ site.subtitle }}</p>{% endif %}
-    </header>
-  </div>
-</div>
-
-<div class="wrapper">
-
-{% for category in site.categories %}
-  {% capture cat %}{{ category | first }}{% endcapture %}
-  <h2 id="{{cat}}">{{ cat | capitalize }}</h2>
-  {% for desc in site.descriptions %}
-    {% if desc.cat == cat %}
-      <p class="desc"><em>{{ desc.desc }}</em></p>
-    {% endif %}
-  {% endfor %}
-  <ul class="posts-list">
-  {% for post in site.categories[cat] %}
-    <li>
-      <strong>
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </strong>
-      <span class="post-date">- {{ post.date | date_to_long_string }}</span>
-    </li>
-  {% endfor %}
-  </ul>
-  {% if forloop.last == false %}<hr>{% endif %}
-{% endfor %}
-
-
-<ul class="post-list">
-  {% for post in paginator.posts %}
-  <li>
-    <h2>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-    <section class="post-excerpt" itemprop="description">
-      <p>{{ post.content | strip_html | truncatewords: 50 }}</p>
-    </section>
-    <section class="post-meta">
-      <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-      <div class="post-categories">
-      {% if post.categories.size > 0 %}in {% for cat in post.categories %}
-        {% if site.jekyll-archives %}
-        <a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
-        {% else %}
-        <a href="{{ site.baseurl }}/posts/#{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
-        {% endif %}
-      {% endfor %}{% endif %}
-      </div>
-    </section>
-  </li>
-  {% if forloop.last == false %}
-  <hr>
-  {% endif %}
-  {% endfor %}
-</ul>
-
-<!--nav class="pagination" role="navigation">
-	<p>
-    {% if paginator.previous_page %}
-			{% if paginator.page == 2 %}
-			<a class="newer-posts" href="{{ site.baseurl }}{{ paginator.previous_page_path }}">
-        <span class="fa-stack fa-lg">
-          <i class="fa fa-square fa-stack-2x"></i>
-          <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-        </span>
-      </a>
-			{% else %}
-			<a class="newer-posts" href="{{ site.baseurl }}{{ paginator.next_page_path }}">
-				<span class="fa-stack fa-lg">
-					<i class="fa fa-square fa-stack-2x"></i>
-					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-				</span>
-			</a>
-			{% endif %}
-		{% else %}
-		<span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
-    </span>
-		{% endif %}
-		<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-		{% if paginator.next_page %}
-		<a class="newer-posts" href="{{ site.baseurl }}{{ paginator.next_page_path }}">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-square fa-stack-2x"></i>
-        <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-		{% else %}
-		<span class="fa-stack fa-lg">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
-    </span>
-		{% endif %}
-	</p>
-</nav-->
-
-</div>
-</div>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>홍대리 주식캘린더 : 전문가가 뽑은 뉴스, 쪽집게 종목으로 매매하자!</title>
+    <meta name="description" content="홍대리 주식캘린더 : 전문가가 뽑은 뉴스, 쪽집게 종목으로 매매하자!">
+    <link rel="icon" type="image/png" href="./calendar.png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="./calendar.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5809567310705589" crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-03H3JCFTBN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-03H3JCFTBN');
+    </script>
+    <script type="module" crossorigin src="/assets/index-858b2aaa.js"></script>
+    <link rel="stylesheet" href="/assets/index-0cda052a.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>
